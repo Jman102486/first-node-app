@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task App</title>
+    <style>
+      body { font-family: Arial, sans-serif; max-width: 600px; margin: 40px auto; padding: 0 16px; }
+      h1 { margin-bottom: 8px; }
+      form { display: flex; gap: 8px; margin: 16px 0; }
+      input { flex: 1; padding: 10px; }
+      button { padding: 10px 14px; cursor: pointer; }
+      ul { list-style: none; padding: 0; }
+      li { display: flex; justify-content: space-between; align-items: center; padding: 10px; border: 1px solid #ddd; border-radius: 8px; margin-bottom: 8px; }
+      .muted { color: #666; font-size: 14px; }
+    </style>
+  </head>
+  <body>
+    <h1>Task App</h1>
+    <div class="muted">Frontend → talks to your Node/Express API</div>
+
+    <form id="taskForm">
+      <input id="taskInput" placeholder="Type a task..." autocomplete="off" />
+      <button type="submit">Add</button>
+    </form>
+
+    <ul id="taskList"></ul>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
