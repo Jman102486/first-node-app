@@ -3,6 +3,10 @@ import cors from "cors";
 import helmet from "helmet";
 import morgan from "morgan";
 
+import routes from "./routes/index.js";
+import { notFound } from "./middleware/notFound.js";
+import { errorHandler } from "./middleware/errorHandler.js";
+
 export const createApp = () => {
     const app = express();
 
@@ -11,9 +15,12 @@ export const createApp = () => {
     app.use(express.json());
     app.use(morgan("dev"));
 
-    app.get("/api/health", (req, res) =>{
-        res.json({ status: "ok" });
-    });
+    // All API routes live under /api
+    app.use("/api", routes);
+
+    // 404 + error handling
+    app.use(notFound);
+    app.use(errorHandler);
     
     return app;
 };
