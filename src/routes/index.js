@@ -1,9 +1,8 @@
 import { Router } from "express";
+import tasksRoutes from "./tasks.routes.js";
 
 const router = Router();
 
-router.get("/health", (req, res) => {
-    res.json({ status: "ok" });
-});
+router.use(tasksRoutes);
 
 export default router;
