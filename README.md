@@ -1,4 +1,4 @@
-# First Node App (Task Manager API)
+# secure-task-manager-api
 
 A simple Node.js + Express REST API that allows users to:
 
